@@ -1,0 +1,1 @@
+web: gunicorn Vcafe.wsgi --log-file -

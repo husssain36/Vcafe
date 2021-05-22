@@ -1,0 +1,142 @@
+{% load widget_tweaks %} 
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <title>vCafe</title>
+  <link rel="shortcut icon" type="image/jpg" href="{% static '/images/vcafe icon.png' %}"/>
+  <style>
+    #section{
+    background: url("{% static '/images/background.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 753px;
+    font-weight: bold;
+    }
+
+    #messages{
+			background-color: grey;
+			color: #fff;
+			padding: 10px;
+			margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body> 
+  <!---Navbar-->
+  <nav class="navbar fixed-top">
+    <div class="container">
+    <a href="#" class="navbar-brand"> 
+      <img src="{% static 'images/logo-white-01.png' %}" alt="">
+    </a>
+  </div>
+  </nav>
+
+<!---Section-->
+<section id="section">
+  <div class="dark-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 py-10 m-auto text-center">
+          <div class="overlay">
+            <h1 class="">
+              Welcome To <img class="mb-3 " src="{% static 'images/logo-01.png' %}">
+            </h1>
+            <form action="" method="POST">
+              {% csrf_token %}
+              <div class="input-group mt-10">
+                <!--div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div-->
+                <input id="email" name="username" type="name" placeholder="username" class="form-control">
+              </div>
+
+              <div class="input-group">
+                <!--div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </div-->
+                <input id="password" name="password" type="password" placeholder="password" class="form-control">
+              </div>
+
+              <input id="login" type="submit" value="login" class="btn btn-block">
+
+            </form>
+            {% for message in messages %}
+					    <p id="messages">{{message}}</p>
+				    {% endfor %}
+            {% for i in form.errors %}
+              <p id="messages">{{i}}</p>
+            {% endfor %}
+            <h3>OR</h3>
+
+            <a href="{% url 'register' %}" class="btn btn-block">Create Account</a>
+
+            
+
+          </div>          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!---Create accout modal-->
+<!-- <div id="createModal" class="modal fade">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Create Account</h3>
+          <button class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="form">
+            <div class="input-group">
+              <input id="email" name="email" type="email" placeholder="Email" class="form-control">
+            </div>
+            <div class="input-group">
+              <input id="name" name="name" type="text" placeholder="Name" class="form-control">    
+            </div>
+            <div class="input-group">
+              <input id="roll-no" name="roll-no" type="text" placeholder="Roll-no" class="form-control">
+            </div>
+            <div class="input-group">
+              <input id="password1" name="password" type="password" placeholder="Password" class="form-control">
+            </div>
+            <div class="input-group">
+              <input id="password2" name="password" type="password" placeholder="Confirm Password" class="form-control">
+            </div>
+            <input id="createAccount" type="submit" value="Create Account" class="btn btn-block">
+          </form>
+        </div>
+      </div>
+  </div>
+</div> -->
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <!-- <script src="{% static 'js/main.js' %}"></script> -->
+</body>
+
+</html>

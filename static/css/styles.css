@@ -1,0 +1,304 @@
+
+#section{
+    background: url(../img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 1250px;
+    font-weight: bold;
+}
+#section .dark-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 753px;
+    background-color: rgba(0, 0, 0, 0.38);
+}
+#section .bright-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1250px;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+#section .overlay{
+    background-color: rgba(255, 255, 255, 0.64);
+    border-radius: 15px;
+    min-height:600px;
+}
+
+#section h1{
+    color: #CC8F5A;
+}
+#section form{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+#section .input-group{
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    margin-top: 30px;
+    
+}
+#section input{
+    border-radius: 50px;
+}
+
+#section .overlay .btn{
+    background-color: #CC8F5A;
+    color: #fff;
+    width: 300px;
+    margin-top: 30px;
+    border-radius: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    font-size: 1.25rem;
+}
+#section h3{
+    color: #CC8F5A;
+    margin-top: 40px;
+    margin-bottom: 40px
+}
+#createModal .modal-dialog{
+    width: 350px
+}
+
+#createModal .modal-header{
+    background-color: #CC8F5A;
+    color: #fff;
+}
+#createModal form{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+#createModal .input-group{
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    margin-top: 30px;  
+}
+
+#createModal input{
+    border-radius: 50px;
+}
+
+.form-control.error{
+    border-color: red;
+}
+.form-control.success{
+    border-color: green;
+}
+
+
+#createModal .btn{
+    background-color: #CC8F5A;
+    color: #fff;
+    width: 300px;
+    margin-top: 30px;
+    border-radius: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    font-size: 1.25rem;
+}
+
+#section .overlay2{
+    margin-top: 150px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    min-height:300px;
+}
+#section .overlay2 a{
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+    margin-top: 125px;
+    padding: 10px;
+    font-size:2rem;
+    width:300px;
+}
+
+#passwordModal .modal-dialog{
+    width: 350px
+}
+
+#passwordModal .modal-header{
+    background-color: #CC8F5A;
+    color: #fff;
+}
+#passwordModal .modal-body{
+    background-color: #fff;
+    color: #CC8F5A;
+}
+#passwordModal form{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+#passwordModal .input-group{
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    margin-top: 30px;
+    
+}
+#passwordModal input{
+    border-radius: 50px;
+}
+
+#passwordModal .btn{
+    background-color: #CC8F5A;
+    color: #fff;
+    width: 300px;
+    margin-top: 30px;
+    border-radius: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    font-size: 1.25rem;
+}
+
+#section table{
+    margin-top:150px;
+    font-size: 1.5rem;
+}
+#section table .btn{
+background-color: #CC8F5A;
+    color: #fff;
+    width: 150px;
+    border-radius: 50px;
+    font-size: 1.25rem;
+}
+
+.navbar a.biege{
+    color: #CC8F5A;
+    font-size: 2.5rem;
+    font-family: 'tekton pro';
+    font-weight: bold;
+}
+#section .container{
+    margin-top: 125px;
+    color: #CC8F5A;
+    font-size: 1.5rem;
+    font-family: 'tekton pro';
+    font-weight: bold;
+}
+#section .container .heading{
+    font-size: 2.5rem;
+}
+
+#section .categories h4{
+    color: #CC8F5A;
+    font-size: 2.5rem;
+    font-family: 'tekton pro';
+    font-weight: bold;
+}
+.row h4{
+    font-weight: bold;
+}
+/* 
+#section .categories{
+    border-right: 2px solid #cc8f5a;
+    opacity: 0.8;
+} */
+
+#section .categories li{
+    margin-top: 10px;
+}
+.container.navbar-border{
+ border-bottom: 2px solid #cc8f5a;
+ opacity: 0.8;
+}
+
+.row .search{
+    width: 350px;
+    height: 50px;
+}
+.row .btn{
+background-color: #cc8f5a
+}
+
+#section .card{
+    width: 100%;
+    margin-top: 50px;
+    height: 100px;
+    background-color: white;
+}
+#section .card .img{
+    width: 12%;
+    
+}
+
+#section .card .img2{
+    width: 9%;
+    /* margin-right: auto;
+    margin-left: 15px; */
+}
+
+
+#section .card .row h4{
+    margin-left: 30px;
+    font-size: 2rem;
+}
+
+#section .card .ml-corder {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: 50px;
+    margin-top: 40px;
+    
+}
+#section .card .negMargin{
+    
+    margin-top: 50px;
+    margin-left: -170px;
+}
+
+#section .card .row .btn{
+    width: 15%;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#section .card .ml-20{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 20px;
+    margin-top: 30px;
+    
+}
+
+#section .card a.btn-pay{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: auto;
+    width: 1000px;
+    height: 100px;
+    padding-top: 25px;
+    
+}
+
+#section .card .total{
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: 100px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.btn-close{
+    width: 60px;
+    height: 30px;
+    color:#CC8F5A;
+    margin-top: 10px;
+    margin-right: 10px;
+}
