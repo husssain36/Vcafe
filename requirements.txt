@@ -20,3 +20,4 @@ sqlparse
 urllib3        
 wcwidth              
 yarg                 
+gunicorn
