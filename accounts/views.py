@@ -1,9 +1,8 @@
 
+from django.http.response import HttpResponseRedirect
 from django.shortcuts import render,redirect
-from django.http import HttpResponse, JsonResponse
-from django.forms import inlineformset_factory
+from django.http import JsonResponse
 from .forms import CreateUserForm
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -14,17 +13,16 @@ import razorpay
 from email.message import EmailMessage
 from prettytable import PrettyTable
 import smtplib
-import imghdr
 from fpdf import FPDF
-import pyfiglet
 from datetime import datetime, timedelta
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
+from django.urls import reverse
 
 
 def RegisterPage(request):
     if request.user.is_authenticated:
-        return redirect('home')
+        return HttpResponseRedirect(reverse('home'))
     else:
         form = CreateUserForm()
         if request.method == 'POST':
@@ -34,20 +32,20 @@ def RegisterPage(request):
                 username = form.cleaned_data.get('username')
                 password = form.cleaned_data.get('password1')
                 #Sending email of email and password
-                msg = EmailMessage()
-                customer = username
-                msg['Subject'] = 'Your Credentials On vCafe'
-                msg['from'] = 'vCafe'
-                msg['to'] = str(customer) # user's email address
-                creds = 'Username: ' + username + '\n' + 'Password:' + password
-                msg.set_content(creds)
-                server = smtplib.SMTP_SSL('smtp.gmail.com',465)
-                server.login('vcafe.vit@gmail.com','vidyalankar') #email and password
-                server.send_message(msg)
-                server.quit()
+                # msg = EmailMessage()
+                # customer = username
+                # msg['Subject'] = 'Your Credentials On vCafe'
+                # msg['from'] = 'vCafe'
+                # msg['to'] = str(customer) # user's email address
+                # creds = 'Username: ' + username + '\n' + 'Password:' + password
+                # msg.set_content(creds)
+                # server = smtplib.SMTP_SSL('smtp.gmail.com',465)
+                # server.login('vcafe.vit@gmail.com','vidyalankar') #email and password
+                # server.send_message(msg)
+                # server.quit()
                 #Ending email code
                 messages.success(request, 'Account was created for ' + username)
-                return redirect('login')
+                return HttpResponseRedirect(reverse("login"))
             else:
                 form = CreateUserForm()    
                 messages.error(request, "Your credentials are incorrect or Try using your VIT email")
@@ -57,7 +55,7 @@ def RegisterPage(request):
 
 def LoginPage(request):
     if request.user.is_authenticated:
-        return redirect('home')
+        return HttpResponseRedirect(reverse('home'))
     else:
         if request.method == 'POST':
             username = request.POST.get('username')
@@ -66,7 +64,7 @@ def LoginPage(request):
             
             if user is not None:
                 login(request, user)
-                return redirect('home')
+                return HttpResponseRedirect(reverse('home'))
             else:
                 messages.info(request, "Username or Password is incorrect")
     context = {}
